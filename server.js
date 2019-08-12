@@ -30,7 +30,7 @@ app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
-app.get('/', function(req, res) {
+app.get('/', (req, res)=> {
  
     res.send('Welcome to Passport with Sequelize');
  
@@ -50,19 +50,19 @@ require('./app/config/passport/passport.js')(passport, models.user);
  
  
 //Sync Database
-models.sequelize.sync().then(function() {
+models.sequelize.sync().then(()=> {
  
     console.log('Nice! Database looks fine')
  
  
-}).catch(function(err) {
+}).catch((err)=> {
  
     console.log(err, "Something went wrong with the Database Update!")
  
 });
  
  
-app.listen(5000, function(err) {
+app.listen(5000, (err)=> {
  
     if (!err)
  

@@ -1,4 +1,5 @@
 var express = require('express');
+
 var router = express.Router();
 
 /* GET users listing. */
@@ -8,61 +9,14 @@ router.get('/', function(req, res, next) {
 
 module.exports = router;
 
-//auth part
-module.exports = function(sequelize, Sequelize) {
- 
-  var User = sequelize.define('user', {
+var sequelize = require('sequelize');
+/*
+var db = require('./index.js');
 
-      id: {
-          autoIncrement: true,
-          primaryKey: true,
-          type: Sequelize.INTEGER
-      },
+db.Sequelize = Sequelize;
 
-      firstname: {
-          type: Sequelize.STRING,
-          notEmpty: true
-      },
+var User = sequelize.import('./pluggableuser.js');*/
 
-      lastname: {
-          type: Sequelize.STRING,
-          notEmpty: true
-      },
-
-      username: {
-          type: Sequelize.TEXT
-      },
-
-      about: {
-          type: Sequelize.TEXT
-      },
-
-      email: {
-          type: Sequelize.STRING,
-          validate: {
-              isEmail: true
-          }
-      },
-
-      password: {
-          type: Sequelize.STRING,
-          allowNull: false
-      },
-
-      last_login: {
-          type: Sequelize.DATE
-      },
-
-      status: {
-          type: Sequelize.ENUM('active', 'inactive'),
-          defaultValue: 'active'
-      }
-
-
-  });
-
-  return User;
-
-}
+ sequelize.import(__dirname + "/models/pluggableuser.js");
 
 // end of auth part
