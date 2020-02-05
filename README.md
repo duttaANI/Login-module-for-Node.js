@@ -1,2 +1,1 @@
-# Messenger_API
-Initial commit test
+# Login module using passport Sequelize and express js
