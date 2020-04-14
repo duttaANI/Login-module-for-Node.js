@@ -2,10 +2,10 @@
 
 #### middlewares used are as follows
 
-_Passport.js
+_Passport.js_
 
-_sequelize
+_sequelize_
 
 #### database
 
-_sqlite3
+_sqlite3_
