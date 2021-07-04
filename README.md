@@ -6,6 +6,8 @@ _Passport.js_
 
 _sequelize_
 
+_express_
+
 #### database
 
 _sqlite3_
